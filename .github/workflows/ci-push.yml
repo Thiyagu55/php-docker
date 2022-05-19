@@ -1,0 +1,20 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - branch-1
+    paths:
+      - docker-laravel/app/**
+jobs:
+  publishphp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: thiyagu55/training
+          publish_dir: ./docker-laravel/app
