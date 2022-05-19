@@ -18,3 +18,4 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: thiyagu55/training
           publish_dir: ./docker-laravel/app
+          publish_branch: master
