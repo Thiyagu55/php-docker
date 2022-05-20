@@ -10,12 +10,13 @@ jobs:
   publishphp:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: thiyagu55/training
-          publish_dir: ./docker-laravel/app
-          publish_branch: master
+          source-directory: 'docker-laravel/app'
+          destination-github-username: 'thiyagu55'
+          destination-repository-name: 'training'
+          user-email: thiyagu.nataraj@gmail.com
+          target-branch: master
