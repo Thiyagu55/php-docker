@@ -17,5 +17,4 @@ jobs:
           source-directory: 'docker-laravel/app'
           destination-github-username: 'thiyagu55'
           destination-repository-name: 'training'
-          user-email: test@gmail.com
           target-branch: master
