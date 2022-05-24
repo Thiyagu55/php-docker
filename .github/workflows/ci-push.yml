@@ -1,0 +1,20 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - branch-1
+jobs:
+  publishphp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUBB }}
+        with:
+          source-directory: 'docker-laravel/app'
+          destination-github-username: 'thiyagu55'
+          destination-repository-name: 'training'
+          target-branch: master
